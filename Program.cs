@@ -7,7 +7,7 @@
 ///2) с помощью любого цикла заменить все нечётные числа на 1
 
 List<int> nums = new List<int>
-{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+{ 1, 9, 3, 4, 5, 6, 7, 11, 2, 10, 8, 12, 13, 14, 15 };
 Console.Write(" Full masive: ");
 
 foreach (int num in nums)
@@ -21,7 +21,9 @@ Console.Write("\n Even multiplied by two: ");
 foreach (int i in nums)
 {
     if (i % 2 == 0)
-        Console.Write(i * 2 + " ");
+        Console.Write($" {i * 2} ");
+    else
+        Console.Write($" {i - i + 1} ");
 }
 
 Console.WriteLine();
@@ -43,23 +45,6 @@ Console.WriteLine();
 
 ///4) нужно отсортировать второй список и вывести все элементы через фор
 
-List<int> firstList = new List<int>
-{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
-
-Console.WriteLine("\nLees than 7 or more than 10: ");
-foreach (int values in firstList)
-{
-    if (values > 10)
-    {
-        Console.Write(values + " ");
-    }
-    Console.WriteLine();
-    if (values < 7)
-    {
-        Console.Write(values + " ");
-    }
-}
-
 Console.WriteLine();
 
 Console.Write("Sorting of numbers: ");
@@ -71,3 +56,16 @@ foreach (int i in orderedNumbers)
     Console.Write(i + " ");
 
 Console.WriteLine();
+Console.WriteLine();
+
+//////////////////////////////////////////
+
+var selectedNumber = nums.Where(a => a > 10 || a < 7).Select(a => a+6);
+
+foreach (int ints in selectedNumber)
+    Console.Write(ints + " ");
+
+Console.WriteLine();
+
+
+//////////////////////////////////////////
